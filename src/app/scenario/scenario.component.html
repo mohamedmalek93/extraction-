@@ -1,0 +1,40 @@
+
+<div class="col-md-6">
+    <table class="table table-striped">
+    
+    <tbody>
+        <tr *ngFor="let sc of scenarios;let indexOfelement=index;">
+          <li class="list-group-item">
+          <div 
+          [ngStyle]="{'color': getColor(indexOfelement)}">
+          
+          {{sc.description}}
+          <button  [ngStyle]="{'color':'black'}" type="button" (click)="show(indexOfelement)">{{getbut(indexOfelement)}}</button> 
+          <br>   
+          resultat de scenario {{sc.result}}______________ {{sc.errortype}}  <br>
+          temps d'execution:  {{sc.duration}}secondes <br>
+         <div  > {{sc.errortype}}</div>
+          
+         
+
+        
+       
+          
+         <div  *ngFor="let step of getsteps(indexOfelement)">
+          
+          <li  [ngStyle]="{'display':getvis(indexOfelement)}" class="list-group-item">
+            
+
+           
+            {{step.description}}
+            
+            </li>
+          </div>
+    
+      </div>
+          
+        </li>
+            </tr>
+    </tbody>
+      </table>
+    </div>
